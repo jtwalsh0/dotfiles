@@ -3,4 +3,4 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='ls -GFh'
 export PAGER=less
-export LESS="-iMSx4 -FX"
+export LESS="-iMSx4 -FXR"
