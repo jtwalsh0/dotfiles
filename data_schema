@@ -8,4 +8,8 @@ fi
 
 FILE=$1
 
-head -n1000 "${FILE}" | tr [:upper:] [:lower:] | tr ' ' '_' | csvsql -i postgresql --no-constraints
+head -n1000 "${FILE}" | \
+    tr [:upper:] [:lower:] | \
+    tr ' ' '_' | \
+    csvsql -i postgresql --no-constraints | \
+    sed -E 's/(BOOLEAN|DECIMAL|INTEGER|VARCHAR)/TEXT/g'
